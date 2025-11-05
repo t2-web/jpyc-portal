@@ -122,13 +122,6 @@ const TermsOfService: React.FC = () => {
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">第11条（お問い合わせ）</h2>
-            <p className="text-on-surface-secondary leading-relaxed">
-              本規約に関するお問い合わせは、<a href="https://jpyc.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">JPYC公式サイト</a>のお問い合わせフォームよりご連絡ください。
-            </p>
-          </section>
-
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-sm text-on-surface-secondary">
               制定日: {new Date().toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })}
