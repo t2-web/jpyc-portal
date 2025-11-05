@@ -241,3 +241,6 @@ export const SCAM_CONTRACTS: ScamContract[] = [
 ];
 
 export const SCAM_REPORT_FORM_URL = "https://forms.gle/jpyc-scam-report";
+
+// TODO: 実際のGoogleフォームURLに更新してください
+export const SERVICE_SUBMISSION_FORM_URL = "https://forms.gle/your-form-id-here";

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Card from '../components/Card';
-import { DEFI_PROTOCOLS, ECOSYSTEM_RESOURCES } from '../constants';
+import { DEFI_PROTOCOLS, ECOSYSTEM_RESOURCES, SERVICE_SUBMISSION_FORM_URL } from '../constants';
 import { ExternalLinkIcon } from '../components/icons';
 
 const Ecosystem: React.FC = () => {
@@ -52,6 +52,25 @@ const Ecosystem: React.FC = () => {
               </a>
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section>
+        {/* 掲載募集セクション: プライマリカラーの薄い背景で目立たせる */}
+        <div className="bg-primary/10 border-2 border-primary/30 rounded-lg shadow-lg p-6 md:p-8">
+          <h2 className="text-2xl font-semibold text-on-surface mb-4">JPYC を利用したサービスの掲載募集</h2>
+          <p className="text-on-surface-secondary mb-6">
+            JPYC を採用しているサービスを掲載します。以下のフォームより申請してください。
+          </p>
+          <a
+            href={SERVICE_SUBMISSION_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-white px-6 py-3 text-base font-semibold hover:bg-primary-hover transition-colors shadow-md"
+          >
+            フォームから申請する
+            <ExternalLinkIcon />
+          </a>
         </div>
       </section>
     </div>
