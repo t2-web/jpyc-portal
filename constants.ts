@@ -58,6 +58,23 @@ export const DEFI_PROTOCOLS: DeFiProtocol[] = [
     category: "スワップ",
     link: "https://app.uniswap.org/swap?chain=mainnet&inputCurrency=0xe7c3d8c9a439fede00d2600032d5db0be71c3c29&outputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&field=input",
   },
+  {
+    name: "Tria",
+    logoUrl: "https://app.tria.so/favicon.ico", // TODO: より高解像度のロゴURLに更新してください
+    description:
+      "初心者でも使いやすい次世代型のクレジットカードサービス。JPYCやUSDCなどによる入金が可能。現在1.5-6%のキャッシュバックあり",
+    category: "決済",
+    link: "https://app.tria.so/?accessCode=D2403X2943",
+  },
+  {
+    name: "Nudge",
+    logoUrl:
+      "https://storage.googleapis.com/studio-design-asset-files/projects/moWvE1Dza6/s-768x544_v-fs_webp_0571a924-346a-46a5-b8b9-192df3a41d3f_small.webp",
+    description:
+      "次世代クレジットカードサービス。JPYCと連携した決済や特典機能を利用できます。",
+    category: "決済",
+    link: "https://nudge.works/",
+  },
   // { name: 'Aave', logoUrl: 'https://assets.coingecko.com/coins/images/12645/small/AAVE.png?1696512361', description: 'JPYC を預け入れて利息を得たり、担保にして借入ができます。', category: 'レンディング', link: '#'},
   // { name: 'Stargate', logoUrl: 'https://assets.coingecko.com/coins/images/24413/small/STG_LOGO.png?1647654518', description: '統一流動性を使って JPYC を異なるブロックチェーン間でブリッジ。', category: 'ブリッジ', link: '#'},
 ];
@@ -243,4 +260,5 @@ export const SCAM_CONTRACTS: ScamContract[] = [
 export const SCAM_REPORT_FORM_URL = "https://forms.gle/jpyc-scam-report";
 
 // TODO: 実際のGoogleフォームURLに更新してください
-export const SERVICE_SUBMISSION_FORM_URL = "https://forms.gle/your-form-id-here";
+export const SERVICE_SUBMISSION_FORM_URL =
+  "https://forms.gle/your-form-id-here";
