@@ -28,14 +28,16 @@ const App: React.FC = () => {
     switch (activeTab) {
       case 'ホーム':
         return <Home />;
-      case '分析':
-        return <Analytics />;
+      // 分析ページを非表示
+      // case '分析':
+      //   return <Analytics />;
       case 'エコシステム':
         return <Ecosystem />;
       case 'チュートリアル':
         return <Tutorials />;
-      case 'セキュリティ':
-        return <Security />;
+      // セキュリティページを非表示
+      // case 'セキュリティ':
+      //   return <Security />;
       case 'プライバシーポリシー':
         return <PrivacyPolicy />;
       case '利用規約':
