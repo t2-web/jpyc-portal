@@ -261,4 +261,4 @@ export const SCAM_REPORT_FORM_URL = "https://forms.gle/jpyc-scam-report";
 
 // TODO: 実際のGoogleフォームURLに更新してください
 export const SERVICE_SUBMISSION_FORM_URL =
-  "https://forms.gle/your-form-id-here";
+  "https://docs.google.com/forms/d/e/1FAIpQLScFZtyshAFe4znpmMX16KUDjx0X5JSKhIMD-rMMgeUWO-hUsA/viewform?usp=sharing&ouid=107520808985846825518";
