@@ -1,0 +1,1 @@
+UI コードは React Function Component と TypeScript を使用し、2 スペースインデントかつ JSX ではシングルクォート優先。Tailwind 風ユーティリティクラスを用いたスタイリングが基本で、共通ウィジェットは components/、ページは views/ に配置。グローバル型は types.ts、定数は constants.ts。機能ごとのファイルを近接配置する方針。
