@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           <div>
             <h3 className="text-lg font-semibold mb-4">リソース</h3>
             <ul className="space-y-2 text-sm">
-              <li>
+              {/* <li>
                 <a
                   href="https://docs.jpyc.jp/"
                   target="_blank"
@@ -50,7 +50,7 @@ const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 >
                   JPYC ドキュメント
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="https://etherscan.io/token/0xE7C3D8C9a439feDe00D2600032D5dB0Be71C3c29"
@@ -88,7 +88,7 @@ const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                   </svg>
-                  X (Twitter)
+                  (Twitter)
                 </a>
               </li>
             </ul>
