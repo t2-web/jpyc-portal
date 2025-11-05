@@ -67,12 +67,12 @@ const Home: React.FC = () => {
     const supplyFull = isLoading ? '読み込み中…' : totalSupplyFormatted ? `${totalSupplyFormatted} JPYC` : '—';
 
     // 価格データの表示ロジック
-    // USD価格の逆数で円建て価格を計算（1 JPYC = 1/usd JPY）
-    const priceInJPY = priceState.data ? (1 / priceState.data.usd).toFixed(2) : null;
+    // USD価格の逆数でJPYC/USD レートを計算（$1 = X JPYC）
+    const jpycPerDollar = priceState.data ? (1 / priceState.data.usd).toFixed(2) : null;
     const priceLabel = priceState.isLoading
         ? '読み込み中…'
         : priceState.data
-            ? `¥${priceInJPY} (${formatPrice(priceState.data.usd)})`
+            ? `${jpycPerDollar} JPYC($1)`
             : 'Coming Soon';
     const priceSubtitle = priceState.data ? `時価総額: ${formatMarketCap(priceState.data.usd_market_cap)}` : priceState.error ? priceState.error : 'CoinGecko API から取得';
     const priceChangeText = priceState.data ? formatChange(priceState.data.usd_24h_change) : undefined;
