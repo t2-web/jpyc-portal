@@ -26,12 +26,13 @@ const NavItem: React.FC<{
 );
 
 const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
+  // 分析とセキュリティページを非表示にする
   const navItems: { label: Tab }[] = [
     { label: 'ホーム' },
-    { label: '分析' },
+    // { label: '分析' }, // 非表示
     { label: 'エコシステム' },
     { label: 'チュートリアル' },
-    { label: 'セキュリティ' },
+    // { label: 'セキュリティ' }, // 非表示
   ];
 
   return (

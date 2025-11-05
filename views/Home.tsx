@@ -3,6 +3,7 @@ import Card from '../components/Card';
 import StatCard from '../components/DataCard';
 import HeroBackground from '../components/HeroBackground';
 import ChainDistributionBar from '../components/ChainDistributionBar';
+import DexTable from '../components/DexTable';
 import { PlayIcon } from '../components/icons';
 import { ANNOUNCEMENTS } from '../constants';
 import { useJpycOnChainData } from '../hooks/useJpycOnChainData';
@@ -290,6 +291,12 @@ const Home: React.FC = () => {
                                 </div>
                             </div>
                         </Card>
+                    </div>
+
+                    {/* DEX情報セクション - ホームページの一番下に移動 */}
+                    <div className="mt-16">
+                        <h2 className="text-2xl font-bold mb-6">DEX情報</h2>
+                        <DexTable />
                     </div>
                 </section>
             </div>

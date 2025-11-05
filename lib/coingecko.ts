@@ -1,4 +1,4 @@
-import { type CoinGeckoResponse } from '../types';
+import { type CoinGeckoResponse, type CoinGeckoDetailedResponse } from '../types';
 
 const COINGECKO_API_BASE = 'https://api.coingecko.com/api/v3';
 
@@ -78,4 +78,52 @@ export function formatMarketCap(marketCap: number): string {
     return `$${(marketCap / 1_000).toFixed(2)}K`;
   }
   return `$${marketCap.toFixed(2)}`;
+}
+
+/**
+ * CoinGecko APIからJPYCの詳細情報（DEX情報を含む）を取得
+ */
+export async function fetchJpycDetailedData(): Promise<CoinGeckoDetailedResponse> {
+  const url = `${COINGECKO_API_BASE}/coins/jpycoin`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error(`CoinGecko API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data: CoinGeckoDetailedResponse = await response.json();
+    console.log('📊 [CoinGecko] Detailed Data:', data);
+
+    return data;
+  } catch (error) {
+    console.error('❌ [CoinGecko] Failed to fetch detailed data:', error);
+    throw error;
+  }
+}
+
+/**
+ * チェーン名をマッピング（識別子から表示名へ）
+ */
+export function mapChainName(identifier: string): string {
+  const chainMap: Record<string, string> = {
+    'ethereum': 'Ethereum',
+    'polygon': 'Polygon',
+    'avalanche': 'Avalanche',
+    'avax': 'Avalanche',
+    'arbitrum': 'Arbitrum',
+    'optimism': 'Optimism',
+    'base': 'Base',
+    'matic': 'Polygon',
+  };
+
+  const normalized = identifier.toLowerCase();
+  return chainMap[normalized] || identifier;
 }
