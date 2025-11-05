@@ -8,7 +8,7 @@ import { PlayIcon } from '../components/icons';
 import { ANNOUNCEMENTS } from '../constants';
 import { useJpycOnChainData } from '../hooks/useJpycOnChainData';
 import { useJpycPrice } from '../hooks/useJpycPrice';
-import { formatPrice, formatVolume, formatChange, formatMarketCap } from '../lib/coingecko';
+import { formatPrice, formatVolume, formatVolumeJPY, formatChange, formatMarketCap } from '../lib/coingecko';
 import { JPYC_CONTRACT_ADDRESSES } from '../lib/onchain';
 
 const Home: React.FC = () => {
@@ -77,7 +77,6 @@ const Home: React.FC = () => {
     const priceSubtitle = priceState.data ? `時価総額: ${formatMarketCap(priceState.data.usd_market_cap)}` : priceState.error ? priceState.error : 'CoinGecko API から取得';
     const priceChangeText = priceState.data ? formatChange(priceState.data.usd_24h_change) : undefined;
     const priceChangeClass = priceChangeText && priceState.data ? (priceState.data.usd_24h_change >= 0 ? 'text-green-600' : 'text-red-500') : '';
-    const volumeText = priceState.data ? `24h取引高: ${formatVolume(priceState.data.usd_24h_vol)}` : undefined;
 
     // チェーン分布データの準備（最も多いチェーンを100%とする）
     const supplyDistributionData = (() => {
@@ -145,9 +144,11 @@ const Home: React.FC = () => {
                         <StatCard title="24h取引高">
                             <div className="flex flex-col items-start">
                                 <p className="text-3xl font-bold tracking-tight">
-                                    {priceState.isLoading ? '読み込み中…' : priceState.data ? formatVolume(priceState.data.usd_24h_vol) : '—'}
+                                    {priceState.isLoading ? '読み込み中…' : priceState.data ? formatVolumeJPY(priceState.data.usd_24h_vol) : '—'}
                                 </p>
-                                <p className="text-sm text-on-surface-secondary mt-1"></p>
+                                <p className="text-sm text-gray-400 mt-1">
+                                    {priceState.isLoading ? '' : priceState.data ? formatVolume(priceState.data.usd_24h_vol) : ''}
+                                </p>
                             </div>
                         </StatCard>
                         <StatCard title="総供給量">

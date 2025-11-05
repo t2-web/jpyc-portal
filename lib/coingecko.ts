@@ -57,6 +57,25 @@ export function formatVolume(volume: number): string {
 }
 
 /**
+ * ボリュームを円建てでフォーマット (例: 17528.96 → "¥2.6M")
+ * @param volume USD建てのボリューム
+ * @param usdJpyRate USD/JPYレート（デフォルト: 150）
+ */
+export function formatVolumeJPY(volume: number, usdJpyRate: number = 150): string {
+  const volumeJPY = volume * usdJpyRate;
+  if (volumeJPY >= 1_000_000_000) {
+    return `¥${(volumeJPY / 1_000_000_000).toFixed(2)}B`;
+  }
+  if (volumeJPY >= 1_000_000) {
+    return `¥${(volumeJPY / 1_000_000).toFixed(1)}M`;
+  }
+  if (volumeJPY >= 1_000) {
+    return `¥${(volumeJPY / 1_000).toFixed(1)}K`;
+  }
+  return `¥${volumeJPY.toFixed(0)}`;
+}
+
+/**
  * 変化率をフォーマット (例: 0.301 → "+0.30%")
  */
 export function formatChange(change: number): string {
